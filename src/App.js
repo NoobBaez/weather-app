@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-function App() {
+const App = () => {
+  const [weather, setWeather] = useState(null);
+
+  useEffect(() => {
+    let isSubscribed = true;
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(({ coords }) => {
+        axios.get(`https://weather-proxy.freecodecamp.rocks/api/current?lon=${coords.longitude}&lat=${coords.latitude}`).then(({ data }) => {
+          if (isSubscribed) {
+            console.log(data)
+            setWeather(data);
+          };
+        });
+      });
+    };
+    return () => isSubscribed = false
+  }, []);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+    <>
+      <h1>Hola Mundo: {JSON.stringify(weather)}</h1>
+    </>
+  )
+};
 
 export default App;
