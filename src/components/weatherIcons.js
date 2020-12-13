@@ -12,7 +12,11 @@ const icons = {
 }
 
 const WeatherIcons = ({ weather }) => {
-    return icons[weather] || icons['Clear'];
+    return (
+        <div id="icon">
+            {icons[weather] || icons['Clear']}
+        </div>
+    );
 };
 
 export default WeatherIcons;

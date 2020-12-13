@@ -1,0 +1,51 @@
+body {
+    color: white;
+    font-size: 25px;
+    font-family: 'Nerko One', cursive;
+    background: rgb(17, 45, 187);
+    background: -moz-radial-gradient(circle, rgba(17, 45, 187, 1) 0%, rgba(186, 2, 40, 1) 100%);
+    background: -webkit-radial-gradient(circle, rgba(17, 45, 187, 1) 0%, rgba(186, 2, 40, 1) 100%);
+    background: radial-gradient(circle, rgba(17, 45, 187, 1) 0%, rgba(186, 2, 40, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#112dbb", endColorstr="#ba0228", GradientType=1);
+}
+
+#main {
+    width: 50vw;
+    margin: auto;
+    padding: 80px;
+}
+
+#time {
+    text-align: center;
+    font-size: 75px;
+}
+
+#icon {
+    max-width: 55vh;
+    margin: auto;
+}
+
+#grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+#temperature {
+    font-size: 75px;
+    text-align: center;
+}
+
+#weather {
+    font-size: 50px;
+    text-align: center;
+}
+
+#location {
+    text-align: center;
+}
+
+#credit {
+    padding-top: 20px;
+    font-size: 10px;
+    text-align: center;
+}
